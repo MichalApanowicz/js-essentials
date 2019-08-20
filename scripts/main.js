@@ -1,36 +1,79 @@
-console.log("for");
-for(var i=0; i<10; i++){
-    console.log(i);
+console.log("Hello JS!")
+
+
+// #region Typy proste
+
+// numbers
+var number = 1000; // or 12.3
+
+var x = 0.2;
+var y = 0.1;
+
+var z = x+y === 0.3;
+
+// bool
+var boolean = true; // or false
+
+// string
+var string = "string";
+
+// undefined
+var undefined_variable = undefined;
+
+// #region es6
+
+// symbol
+var symbol1 = Symbol("symbol");
+var symbol2 = Symbol("symbol");
+
+console.log(symbol1 == symbol2); //false
+
+// bigint
+var bigint = 100n;
+// #endregion
+
+// #endregion
+
+// #region Typy referencyjne
+
+var object = {};
+
+console.log(object === {});
+
+object = {
+    property: "property"
 }
 
-console.log("while");
-var j=0;
-while(j<10){
-    console.log(j);
-    j++;
-}
+var newObject = object;
 
-console.log("do/while");
-var k=0;
-do {
-    console.log(k);
-    k++;
-} while(k<10);
+object.newProperty = "new property"
 
-console.log("for/in");
-var l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-for (x in l){
-    console.log(x);
-}
+console.log(object.newProperty, newObject.newProperty, object["newProperty"]);
 
-console.log("brake/continue");
-var m = 0;
-while(true){
-    console.log(m);
-    m++;
-    if(m==10) {
-        break;
-    } else {
-        continue
-    }
-}
+var array = ["item1", 2, false];
+console.log(array.length);
+
+var add = function (arg1, arg2) {
+    return arg1 + arg2;
+};
+
+
+console.log(add);
+console.log(add(1, 2));
+console.log(add("Hello", " functions!"));
+console.log(add("Hello", 1));
+
+object.sayMyName = function () {
+    console.log(`My name is ${this.name}`);
+};
+object.name = "Pat";
+
+object.sayMyName();
+
+var objectFromObject = Object.create(object);
+objectFromObject.name = "Not Pat";
+
+object.sayMyName();
+objectFromObject.sayMyName();
+
+// #endregion
