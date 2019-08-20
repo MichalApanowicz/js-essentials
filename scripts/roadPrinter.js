@@ -1,3 +1,10 @@
+var getRouteChar = () => {
+    return "_";
+}
+var getCarChar = function() {
+    return "🚗";
+}
+
 var road = {
    /*
     ...
